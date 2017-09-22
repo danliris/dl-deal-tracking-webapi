@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/index.js",
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "start": "node index.js"
   },
   "engines": {
@@ -35,7 +37,10 @@
     "restify-router": "^0.2.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.15",
+    "istanbul": "^0.4.5",
     "mocha": "^3.0.0",
+    "mocha-lcov-reporter": "^1.2.0",
     "should": "^10.0.0",
     "supertest": "^2.0.0"
   },
